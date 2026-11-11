@@ -1,0 +1,73 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiteChat | An AI support chat for your website that knows when to hand over</title>
+<meta name="description" content="SiteChat answers your visitors' questions from your own help articles, and collects their contact details when a person is needed. One line of code to add. Open source, by Devomio.">
+<link rel="icon" type="image/svg+xml" href="{% static 'chat/icon.svg' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'chat/home.css' %}">
+</head>
+<body>
+<header class="bar">
+  <a class="product" href="/"><img src="{% static 'chat/icon.svg' %}" width="30" height="30" alt=""><span>SiteChat</span></a>
+  <p class="by">A demo by <a href="https://devomio.com/" rel="noopener">Devomio</a></p>
+  <a class="repo" href="{{ repo_url }}" rel="noopener">Source on GitHub</a>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>A support chat for your website that answers from your own help pages, and knows when to hand over.</h1>
+    <p class="lede">This page is running the widget for a made-up shop, Alpine Trail Bikes. Open the chat in the corner and ask it something.</p>
+    {% if not ai_enabled %}
+    <p class="banner">No AI model is connected to this copy, so the chat replies by quoting the best-matching help article. Add an API key for written answers.</p>
+    {% endif %}
+    <div class="try">
+      <p>Things to try:</p>
+      <ul>
+        <li><button type="button" class="ask">How much is shipping to Germany?</button></li>
+        <li><button type="button" class="ask">Can I return a bike I have already ridden?</button></li>
+        <li><button type="button" class="ask">Do you sell kids' bikes?</button></li>
+        <li><button type="button" class="ask">I want to talk to a person about my order.</button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="inbox" aria-live="polite">
+      <h2>What the business sees</h2>
+      <p class="sub">Your own conversation, as it appears in the shop's inbox. It updates as you chat.</p>
+      <dl id="lead" class="lead">
+        <div><dt>Status</dt><dd id="lead-status">No conversation yet</dd></div>
+        <div><dt>Name</dt><dd id="lead-name">-</dd></div>
+        <div><dt>Email</dt><dd id="lead-email">-</dd></div>
+        <div><dt>Needs</dt><dd id="lead-note">-</dd></div>
+      </dl>
+      <p class="sub">When a visitor leaves contact details, the shop also gets an email with the full conversation. Staff manage articles and conversations in an admin area.</p>
+      <button type="button" class="link" id="reset">Start a new conversation</button>
+    </div>
+
+    <div class="embed">
+      <h2>Add it to any website with one line</h2>
+      <pre><code>&lt;script src="{{ base_url }}/widget.js" data-site="your-site" async&gt;&lt;/script&gt;</code></pre>
+      <ul class="points">
+        <li><strong>Answers only from your content.</strong> You write short help articles; the assistant does not make up prices or policies.</li>
+        <li><strong>Hands over when it should.</strong> If a visitor asks for a person, or the articles do not cover the question, it collects a name and email and notifies you.</li>
+        <li><strong>Works on any site.</strong> WordPress, Shopify, Webflow or hand-written HTML. The widget is isolated from your page's styles.</li>
+        <li><strong>Private by design.</strong> No cookies and no tracking. Conversations are deleted after {{ retention_days }} days.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Alpine Trail Bikes is fictional. Built by <a href="https://devomio.com/" rel="noopener">Devomio</a>. Want this on your site with your own content? <a href="mailto:hello@devomio.com">hello@devomio.com</a></p>
+</footer>
+
+<script src="/widget.js" data-site="demo" async></script>
+<script src="{% static 'chat/home.js' %}" defer></script>
+</body>
+</html>

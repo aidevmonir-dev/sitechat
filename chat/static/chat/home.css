@@ -1,0 +1,51 @@
+/* SiteChat demo page. Devomio colours: navy ink, coral action. */
+:root {
+  --navy: #213343; --coral: #ff7a59; --ink: #1c2b39; --muted: #5b6b7b; --line: #d9e0e6;
+  --page: #f5f7f9; --panel: #ffffff;
+  --display: "Sora", "Segoe UI", Arial, sans-serif; --text: "Inter", "Segoe UI", Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--text); line-height: 1.6; }
+a { color: var(--navy); text-underline-offset: 0.15em; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; border-radius: 4px; }
+
+.bar { display: flex; align-items: center; gap: 1rem; padding: 0.7rem 1.25rem; background: var(--panel); border-bottom: 1px solid var(--line); }
+.product { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+.by { margin: 0 auto 0 0; font-size: 0.9rem; color: var(--muted); }
+.repo { font-size: 0.9rem; font-weight: 600; }
+
+main { width: min(100% - 2rem, 66rem); margin: 0 auto; padding: 3rem 0 6rem; }
+h1 { font-family: var(--display); font-size: clamp(1.7rem, 3.6vw, 2.6rem); line-height: 1.15; color: var(--navy); margin: 0 0 1rem; max-width: 22em; }
+h2 { font-family: var(--display); font-size: 1.2rem; color: var(--navy); margin: 0 0 0.5rem; }
+.lede { font-size: 1.12rem; max-width: 40em; margin: 0 0 1.25rem; }
+.banner { background: #fff8e1; border: 1px solid #f0dfa6; border-radius: 8px; padding: 0.7rem 1rem; font-size: 0.92rem; max-width: 46em; }
+
+.try p { margin: 1.5rem 0 0.6rem; font-weight: 600; }
+.try ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.ask { font: inherit; text-align: left; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; cursor: pointer; color: var(--ink); }
+.ask:hover { border-color: var(--coral); }
+
+.split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1.5rem; margin-top: 3rem; align-items: start; }
+.inbox, .embed { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; }
+.sub { color: var(--muted); font-size: 0.92rem; margin: 0 0 1rem; }
+.lead { margin: 0 0 1rem; border-top: 2px solid var(--navy); }
+.lead > div { display: grid; grid-template-columns: 5rem 1fr; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+.lead dt { font-weight: 600; color: var(--muted); font-size: 0.9rem; }
+.lead dd { margin: 0; overflow-wrap: anywhere; }
+.lead dd.hot { color: #b3261e; font-weight: 700; }
+.link { font: inherit; background: none; border: 0; padding: 0; color: var(--navy); text-decoration: underline; cursor: pointer; font-size: 0.92rem; }
+
+pre { background: var(--navy); color: #fff; padding: 1rem; border-radius: 10px; overflow-x: auto; font-size: 0.86rem; margin: 0.75rem 0 1.25rem; }
+code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+.points { margin: 0; padding-left: 1.1rem; }
+.points li { margin-bottom: 0.7rem; }
+
+.foot { border-top: 1px solid var(--line); background: var(--panel); padding: 1.25rem; font-size: 0.9rem; color: var(--muted); }
+.foot p { width: min(100% - 2rem, 66rem); margin: 0 auto; padding-right: 5rem; }
+
+@media (max-width: 50rem) {
+  .split { grid-template-columns: 1fr; }
+  .by { display: none; }
+  .product { margin-right: auto; }
+  main { padding-top: 2rem; }
+}
