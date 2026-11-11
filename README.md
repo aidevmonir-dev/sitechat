@@ -28,7 +28,7 @@ widget: small enough to read in an afternoon, with the parts a real deployment n
 - **Several websites from one install.** Each site has its own articles, colour, greeting, allowed
   origins and notification address.
 - **Works on any website.** The widget renders in a shadow root, so it cannot clash with the host
-  page's CSS. No framework, no build step, about 8 KB.
+  page's CSS. No framework, no build step, about 10 KB.
 - **Private by design.** No cookies and no tracking. A conversation is identified by a random id
   kept in the visitor's browser. Conversations are deleted after 30 days.
 - **Safe to expose publicly.** Per-visitor and site-wide daily limits, message and conversation
