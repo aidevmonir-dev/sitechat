@@ -1,5 +1,9 @@
 # SiteChat
 
+**Live demo: [sitechat.devomio.com](https://sitechat.devomio.com/)**
+
+![Screenshot of the live demo](docs/screenshot.png)
+
 An AI support chat for your website that answers from your own help articles, and knows when to
 hand over to a person.
 
